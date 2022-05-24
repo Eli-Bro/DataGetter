@@ -131,7 +131,7 @@ with nidaqmx.Task() as readTask:
         askSave(dataArray)
 
         #Quit the program
-        root.quit()
+        root.destroy()
 
     '''
     Helper function which takes in the 2D matrix for the channel data. The function
