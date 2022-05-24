@@ -11,7 +11,7 @@ from nidaqmx.constants import Edge
 import matplotlib.pyplot as plt
 with nidaqmx.Task() as readTask:
 
-#TODO: 1. Add GUI elements (Exit?), 2. Fix single channel (other todo)
+#TODO: Fix single channel (other todo)
     #Create tk root and properties
     root = Tk()
     root.title('Continuous Interface')
@@ -57,8 +57,7 @@ with nidaqmx.Task() as readTask:
                 messagebox.showerror('DAQ Error', 'System cannot find DAQ, ensure device is plugged in')
                 raise
 
-            # TODO: Remove if needed regarding clock
-            readTask.timing.cfg_samp_clk_timing(rate=1000, sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS)
+            readTask.timing.cfg_samp_clk_timing(rate=100, sample_mode=nidaqmx.constants.AcquisitionType.CONTINUOUS)
 
             #Return true if all checks and set up pass
             return True
@@ -100,7 +99,7 @@ with nidaqmx.Task() as readTask:
 
     '''
     Continuously reads in a single sample from the desired number of channels at a frequency 
-    of 1000Hz. The samples are compiled into a single data set that is later exported to a .txt file.
+    of 100Hz. The samples are compiled into a single data set that is later exported to a .txt file.
     '''
     def record():
         # TODO: If only one channel, returns scalar, not list
@@ -141,7 +140,7 @@ with nidaqmx.Task() as readTask:
         #Set up time axis
         numSamp = len(yAxisMatrix)
         duration = numpy.arange(numSamp)
-        timeArray = duration * 0.001
+        timeArray = duration * 0.01
 
         #Set figure and color list for channels
         fig = plt.figure()
