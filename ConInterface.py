@@ -11,7 +11,7 @@ from nidaqmx.constants import Edge
 import matplotlib.pyplot as plt
 with nidaqmx.Task() as readTask:
 
-#TODO: 1. Add GUI elements (Exit?), 2. Fix single channel (other todo) 3. Slow down problem
+#TODO: 1. Add GUI elements (Exit?), 2. Fix single channel (other todo)
     #Create tk root and properties
     root = Tk()
     root.title('Continuous Interface')
