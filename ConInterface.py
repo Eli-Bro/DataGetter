@@ -165,8 +165,7 @@ with nidaqmx.Task() as readTask:
         fig.supylabel('Voltage (V)')
         plt.show()
 
-        print('duration: ' + str(duration))
-        print('timeArray: ' + str(timeArray))
+        #Print final sample number to console to confirm correct time
         print('numSamp: ' + str(numSamp))
 
 
