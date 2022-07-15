@@ -188,7 +188,9 @@ def plotChannels(numChan, xAxis, yAxisMatrix):
         plt.plot(xAxis, yAxisMatrix[:, position], color=colorStr, label='C.' + str(position))
         plt.legend(loc='upper right', handlelength=0, handletextpad=0, fancybox=True)
         plt.grid()
-        plt.yticks([2.5])
+        plt.margins(y=0.3)
+        plt.yticks([round(numpy.min(yAxisMatrix[:, position], axis=0), 2),
+                    round(numpy.max(yAxisMatrix[:, position], axis=0), 2)])
 
     #Set overall labels
     plt.subplots_adjust(hspace=.0)
