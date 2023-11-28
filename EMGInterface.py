@@ -1,6 +1,6 @@
 import tkinter
 from tkinter import *
-from PIL import ImageTk, Image
+#from PIL import ImageTk, Image
 from tkinter import messagebox
 from tkinter.filedialog import asksaveasfilename
 import numpy
@@ -31,11 +31,11 @@ entryFont = ('Courier', 12, ('italic', 'bold'))
 btnFont = ('Courier', 12, 'bold')
 
 #CBU corner logo (bottom right)
-footerFrame = tkinter.Frame(root, bg='light gray')
-logo = ImageTk.PhotoImage(Image.open('Logo.jpg').resize((100, 37)))
-label = Label(footerFrame, image=logo, borderwidth=0)
-footerFrame.pack(side='bottom', fill='x', padx=5)
-label.pack(side='right', padx=5, pady=5)
+#footerFrame = tkinter.Frame(root, bg='light gray')
+#logo = ImageTk.PhotoImage(Image.open('Logo.jpg').resize((100, 37)))
+#label = Label(footerFrame, image=logo, borderwidth=0)
+#footerFrame.pack(side='bottom', fill='x', padx=5)
+#label.pack(side='right', padx=5, pady=5)
 
 
 '''
@@ -48,8 +48,8 @@ def exitConfirm():
 
 
 #Exit button
-exitBtn = Button(footerFrame, text='Exit', command=exitConfirm, font=btnFont, fg='red')
-exitBtn.pack(side='left', padx=5, pady=5)
+#exitBtn = Button(footerFrame, text='Exit', command=exitConfirm, font=btnFont, fg='red')
+#exitBtn.pack(side='left', padx=5, pady=5)
 
 
 #Information Frame
