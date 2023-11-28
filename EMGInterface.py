@@ -101,8 +101,10 @@ def recordSession():
         with nidaqmx.Task() as readTask:
             #Set up device and channels, check for errors
             try:
-                devNameList = device.DeviceCollection.device_names.__get__(0)
-                devName = devNameList[0]
+                local_system = nidaqmx.system.System.local()
+                devName = local_system.devices[0].name
+                #devNameList = device.DeviceCollection.device_names.__get__(0)
+                #devName = devNameList[0]
                 readTask.ai_channels.add_ai_voltage_chan(devName + '/ai0:'
                                                          + str(int(numChan) - 1),
                                                          terminal_config=nidaqmx.constants.TerminalConfiguration.RSE)
